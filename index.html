@@ -13,6 +13,18 @@
             width: 600px;
             margin: 0 auto;
         }
+        .game{
+            width: 150px;
+            height: 50px;
+            background: brown;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        .game:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +34,7 @@
 </section>
 
 <section class="main-content">
-
+    <div class="game" onclick="tiaozhuan()"><p>爱心鱼小游戏</p></div>
     <div class="imgBox1"><img src="images/test.jpg"></div>
 
 
@@ -32,7 +44,11 @@
     </footer>
 
 </section>
-
+<script>
+    function tiaozhuan(){
+        location.href="tinyHeart/lovingFish.html";
+    }
+</script>
 
 </body>
 </html>
