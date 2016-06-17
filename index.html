@@ -73,7 +73,7 @@
             left: 0%;
             z-index: -1;
             background: rgba(22,22,22,0.8);
-            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
             opacity: 0;
         }
         .navBoxPoint:hover{
@@ -114,7 +114,7 @@
             text-align: center;
             line-height: 150px;
             top:0px;
-            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
         }
         .navBoxViewIcon>span{
             font-size: 45px;
@@ -123,7 +123,7 @@
         .navBoxViewText{
             top:150px;
             background: bisque;
-            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
         }
         #content{
             width: 100%;
@@ -218,12 +218,12 @@
 <script charset="utf-8">
     $(".view").click(function(){
 //        $("#navBox").css("width","100%").css("height","800px").css("top","0%").css("left","0%").css("z-index","990").css("-webkit-transition","all .3s linear");
-        $("#navBox").css("-webkit-transform","scale(1)").css("z-index","990").css("opacity","1").css("-webkit-transition","all .3s linear");
+        $("#navBox").css("transform","scale(1)").css("z-index","990").css("opacity","1").css("transition","all .3s linear");
     });
 
     $("#navBox").click(function(){
 //        $("#navBox").css("width","0%").css("height","0px").css("top","50%").css("left","50%").css("z-index","-1").css("-webkit-transition","all .3s linear");
-        $("#navBox").css("-webkit-transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("-webkit-transition","all .3s linear");
+        $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
     })
 </script>
 </html>
