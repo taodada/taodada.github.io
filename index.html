@@ -169,7 +169,7 @@
             <li class="point">HOME</li>
             <li class="point">ABOUT</li>
             <li class="point">PROJECT</li>
-            <li class="point">PHOTO</li>
+            <li class="point navPhoto">PHOTO</li>
             <li class="point">BLOG</li>
         </ul>
     </nav>
@@ -255,6 +255,12 @@
 
     $("#navBox").click(function(){
         $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
+    });
+
+    $(".navPhoto").click(function(){
+        location.href="./client/photo.html"
     })
+
+
 </script>
 </html>
