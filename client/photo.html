@@ -71,6 +71,10 @@
             width: 19.5%;
             height: 200px;
             background: navajowhite;
+            overflow: hidden;
+        }
+        #photoBox>div>img{
+            height: 200px;
         }
         .pageBtn{
             width: 15%;
@@ -104,6 +108,28 @@
             margin-left: 5%;
             border-top: 1px solid #777;
         }
+        #photoShow{
+            width: 100%;
+            height: 800px;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: -1;
+            background: rgba(22,22,22,0.8);
+            transform: scale(1.5);
+            opacity: 0;
+        }
+        #photoShowBox{
+            width: 60%;
+            height: 500px;
+            margin-left: 20%;
+            margin-top: 100px;
+            background: navajowhite;
+            overflow: hidden;
+        }
+        #photoShowBox>img{
+            height: 500px;
+        }
     </style>
 </head>
 <body>
@@ -122,26 +148,29 @@
         <article id="photoBoxWarp">
             <p>PHOTO SHOW</p>
             <section id="photoBox">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
             </section>
         </article>
         <div class="pageBtn">
-            <div><p>UP PAGE</p></div>
-            <div><P>NEXT PAGE</P></div>
+            <div class="point"><p>UP PAGE</p></div>
+            <div class="point"><P>NEXT PAGE</P></div>
+        </div>
+        <div id="photoShow">
+            <div id="photoShowBox"></div>
         </div>
     </section>
     <footer>
@@ -151,7 +180,23 @@
 <script src="./../js/jquery-1.11.3.js"></script>
 <script charset="utf-8">
     $(function(){
-        var
+        var photoBoxDiv=$("#photoBox div");
+
+
+        $.each(photoBoxDiv,function(i,n){
+            $(photoBoxDiv[i]).html("<img src='./../images/"+i+".jpg'>");
+            $(photoBoxDiv[i]).addClass(""+i+"");
+        })
+
+        $("#photoBox div").click(function(){
+            $("#photoShow").css("transform","scale(1)").css("z-index","990").css("opacity","1").css("transition","all .3s linear");
+            var className=this.className.split(" ");
+            $("#photoShowBox").html("<img src='./../images/"+className[1]+".jpg'>")
+        });
+
+        $("#navBox").click(function(){
+            $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
+        });
     })
 
 </script>
