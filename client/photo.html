@@ -7,11 +7,76 @@
         * {
             margin: 0;
             padding: 0;
+            font-family: 'font';
+        }
+        body{
+            background: #222;
+            height: 800px;
+        }
+        @font-face {
+            font-family: 'font';
+            src: url(./../fonts/font/huakang.TTF);
+        }
+        .point{
+            cursor: pointer;
+        }
+        #header{
+            width: 100%;
+            height: 80px;
+        }
+        #header>nav>ul>li{
+            width: 8%;
+            height: 80px;
+            float: left;
+            list-style: none;
+            line-height: 80px;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            overflow: hidden;
+        }
+        #header>nav>ul>li:nth-of-type(1){
+            margin-left: 30%;
+        }
+        #photoBoxWarp{
+            width: 90%;
+            height: 700px;
+            margin-left: 5%;
+            /*background: rgba(22,22,22,0.8);*/
+            border-top: 1px solid #777;
+        }
+        #photoBoxWarp>p{
+            font-size: 16px;
+            color: white;
+            line-height: 60px;
+        }
+        #photoBox{
+            width: 100%;
+            height: 700px;
+            background: rgba(22,22,22,0.8);
         }
     </style>
 </head>
 <body>
-    <p>相册网页</p>
+    <header id="header">
+        <nav>
+            <ul>
+                <li class="point">HOME</li>
+                <li class="point">ABOUT</li>
+                <li class="point">PROJECT</li>
+                <li class="point navPhoto">PHOTO</li>
+                <li class="point">BLOG</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <article id="photoBoxWarp">
+            <p>PHOTO SHOW</p>
+            <section id="photoBox">
+
+            </section>
+        </article>
+    </section>
 </body>
 <script charset="utf-8">
 
