@@ -2,82 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>涛大大的小木屋</title>
+    <title></title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-        #headBox{
-            width: 100%;
-            height: 80px;
-            background: black;
-            overflow: hidden;
+        @font-face {
+            font-family: 'font';
+            src: url(./fonts/font/huakang.TTF);
         }
-        .headNav{
-            width: 400px;
-            height: 80px;
-            /*background: brown;*/
-            float: right;
+        @font-face {
+            font-family: 'icon';
+            src: url(./fonts/icon/iconfont.ttf);
         }
-        .headNav>ul>li{
-            float: left;
-            width: 80px;
-            height: 80px;
-            list-style: none;
-            text-align: center;
-            line-height: 80px;
-            color: white;
-        }
-        .headNav>ul>li:hover{
+        .point:hover{
             cursor: pointer;
         }
-        /*.indexBg{*/
-            /*width: 1080px;*/
-            /*margin: 0 auto;*/
-        /*}*/
-        .indexBg>img{
-            width: 100%;
+        .icon{
+            font-family: 'icon';
         }
-        footer{
+        #header{
             width: 100%;
-            height: 50px;
-            background: black;
+            height: 718px;
+            background-image: url("images/indexBg.jpg");
+            background-size: 100% 718px;
+        }
+        #header>nav>ul>li{
+            font-family: 'font';
+            width: 8%;
+            height: 80px;
+            float: left;
+            list-style: none;
+            line-height: 80px;
             text-align: center;
-            line-height: 50px;
+            font-size: 14px;
             color: white;
-            font-size: 12px;
         }
-        section{
-            background: black;
+        #header>nav>ul>li:nth-of-type(1){
+            margin-left: 30%;
+        }
+        .view{
+            width: 20px;
+            height: 15px;
+            position:fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+        .view>div{
+            width: 20px;
+            height: 3px;
+            background: white;
+            position: absolute;
+        }
+        .view>div:nth-of-type(1){
+            top: 0px;
+        }
+        .view>div:nth-of-type(2){
+            top: 6px;
+        }
+        .view>div:nth-of-type(3){
+            top: 12px;
+        }
+        #navBox{
+            width: 100%;
+            height: 800px;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: -1;
+            background: rgba(22,22,22,0.8);
+            -webkit-transform: scale(1.5);
+            opacity: 0;
+        }
+        .navBoxPoint:hover{
+            cursor: url('images/cursor.png'), default;
+        }
+        .navBoxView{
+            width: 50%;
+            height: 480px;
+            margin-left: 25%;
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navBoxView>div{
+            width: 32%;
+            height: 150px;
+            background: rgba(0,0,0,0.5);
+            outline: 1px solid rgba(0,0,0,0.8);
+            text-align: center;
+            line-height: 100px;
+        }
+        .navBoxView>div>span{
+            font-size: 45px;
+            color: white;
+        }
+        #content{
+            width: 100%;
+            height: 600px;
+            background: #080808
+        }
+        footer>div{
+            width: 100%;
+            height: 30px;
+        }
+        .color1{
+            background: #71767a;
+        }
+        .color2{
+            background: #ffffff;
+        }
+        .color3{
+            background: #0f1421;
+        }
+        .color4{
+            background: #080808;
         }
     </style>
 </head>
 <body>
-<header id="headBox">
-    <nav class="headNav">
+<header id="header">
+    <nav>
         <ul>
-            <li>首页</li>
-            <li>音乐</li>
-            <li>旅行</li>
-            <li>博文</li>
-            <li>资料</li>
+            <li class="point">HOME</li>
+            <li class="point">ABOUT</li>
+            <li class="point">ALBUM</li>
+            <li class="point">NEWS</li>
+            <li class="point">CONTACT</li>
         </ul>
     </nav>
-</header>
-<section>
-    <div class="indexBg">
-        <img src="images/indexBg.jpg">
+    <div class="view point">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-    <audio autoplay preload="auto">
-        <source src="images/bgMusic2.mp3" type="audio/mpeg">
-    </audio>
+    <div id="navBox" class="navBoxPoint">
+        <div class="navBoxView">
+            <div class="point"><span class="icon">&#xe601;</span></div>
+            <div class="point"><span class="icon">&#xe603;</span></div>
+            <div class="point"><span class="icon">&#xe608;</span></div>
+            <div class="point"><span class="icon">&#xe606;</span></div>
+            <div class="point"><span class="icon">&#xe609;</span></div>
+            <div class="point"><span class="icon">&#xe607;</span></div>
+            <div class="point"><span class="icon">&#xe602;</span></div>
+            <div class="point"><span class="icon">&#xe600;</span></div>
+            <div class="point"><span class="icon">&#xe604;</span></div>
+        </div>
+    </div>
+</header>
+<section id="content">
 </section>
-<footer>
-    <p>网站正在没日没夜的建设中，敬请期待！！！</p>
+<footer id="footer">
+    <div class="color1">你好</div>
+    <div class="color2"></div>
+    <div class="color3"></div>
+    <div class="color4"></div>
 </footer>
 </body>
+<script src="./js/jquery-1.11.3.js"></script>
 <script charset="utf-8">
+    $(".view").click(function(){
+//        $("#navBox").css("width","100%").css("height","800px").css("top","0%").css("left","0%").css("z-index","990").css("-webkit-transition","all .3s linear");
+        $("#navBox").css("-webkit-transform","scale(1)").css("z-index","990").css("opacity","1").css("-webkit-transition","all .3s linear");
+    });
 
+    $("#navBox").click(function(){
+//        $("#navBox").css("width","0%").css("height","0px").css("top","50%").css("left","50%").css("z-index","-1").css("-webkit-transition","all .3s linear");
+        $("#navBox").css("-webkit-transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("-webkit-transition","all .3s linear");
+    })
 </script>
 </html>
