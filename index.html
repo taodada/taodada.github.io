@@ -27,6 +27,22 @@
             height: 718px;
             background-image: url("images/indexBg.jpg");
             background-size: 100% 718px;
+            overflow: hidden;
+            /*text-align: center;*/
+        }
+        .headTitle{
+            font-family: 'font';
+            font-size: 20px;
+            width: 80%;
+            height: 50px;
+            margin-left: 10%;
+            margin-top: 400px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        .headTitle>p:nth-of-type(2){
+            font-size: 12px;
         }
         #header>nav>ul>li{
             font-family: 'font';
@@ -121,30 +137,28 @@
             color: white;
         }
         .navBoxViewText{
+            font-family: 'font';
             top:150px;
-            background: bisque;
+            /*background: bisque;*/
             transition: all .2s linear;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            font-size: 20px;
         }
         #content{
+            font-family: 'font';
             width: 100%;
-            height: 600px;
-            background: #080808
+            height: 100px;
+            background: #080808;
+            text-align: center;
+            line-height: 100px;
+            font-size: 14px;
+            color: white;
         }
         footer>div{
             width: 100%;
-            height: 30px;
-        }
-        .color1{
-            background: #71767a;
-        }
-        .color2{
-            background: #ffffff;
-        }
-        .color3{
-            background: #0f1421;
-        }
-        .color4{
-            background: #080808;
+            height: 0px;
         }
     </style>
 </head>
@@ -154,11 +168,15 @@
         <ul>
             <li class="point">HOME</li>
             <li class="point">ABOUT</li>
-            <li class="point">ALBUM</li>
-            <li class="point">NEWS</li>
-            <li class="point">CONTACT</li>
+            <li class="point">PROJECT</li>
+            <li class="point">PHOTO</li>
+            <li class="point">BLOG</li>
         </ul>
     </nav>
+    <div class="headTitle">
+        <p>Without music,life is a journey through a desert</p>
+        <p>In the life long journey with many detours,path,dangerous road,only the strong-willed and never stop the people,will have hopes of reaching the victory away.</p>
+    </div>
     <div class="view point">
         <div></div>
         <div></div>
@@ -168,61 +186,74 @@
         <div class="navBoxView">
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe601;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>About</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe603;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Project</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe608;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Photo</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe606;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Travel</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe609;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Music</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe607;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Blog</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe602;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>Weibo</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe600;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>WeChat</p>
+                </div>
             </div>
             <div class="point">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe604;</span></div>
-                <div class="navBoxViewText point"></div>
+                <div class="navBoxViewText point">
+                    <p>QQ</p>
+                </div>
             </div>
         </div>
     </div>
 </header>
 <section id="content">
+    <span>This page was generated by GitHub Pages using the Cayman theme by Jason Long.</span>
 </section>
 <footer id="footer">
-    <div class="color1">你好</div>
-    <div class="color2"></div>
-    <div class="color3"></div>
-    <div class="color4"></div>
 </footer>
 </body>
 <script src="./js/jquery-1.11.3.js"></script>
 <script charset="utf-8">
     $(".view").click(function(){
-//        $("#navBox").css("width","100%").css("height","800px").css("top","0%").css("left","0%").css("z-index","990").css("-webkit-transition","all .3s linear");
         $("#navBox").css("transform","scale(1)").css("z-index","990").css("opacity","1").css("transition","all .3s linear");
     });
 
     $("#navBox").click(function(){
-//        $("#navBox").css("width","0%").css("height","0px").css("top","50%").css("left","50%").css("z-index","-1").css("-webkit-transition","all .3s linear");
         $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
     })
 </script>
