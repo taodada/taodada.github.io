@@ -11,7 +11,7 @@
         }
         body{
             background: #222;
-            height: 800px;
+            /*height: 800px;*/
         }
         @font-face {
             font-family: 'font';
@@ -38,22 +38,71 @@
         #header>nav>ul>li:nth-of-type(1){
             margin-left: 30%;
         }
+        #photoBoxContent{
+            width: 100%;
+            height: 766px;
+            /*background: lavender;*/
+        }
         #photoBoxWarp{
             width: 90%;
-            height: 700px;
+            height: 686px;
             margin-left: 5%;
-            /*background: rgba(22,22,22,0.8);*/
             border-top: 1px solid #777;
+            overflow: hidden;
+            /*background: blanchedalmond;*/
         }
         #photoBoxWarp>p{
             font-size: 16px;
             color: white;
-            line-height: 60px;
+            line-height: 50px;
+            margin-top: 30px;
         }
         #photoBox{
             width: 100%;
-            height: 700px;
-            background: rgba(22,22,22,0.8);
+            height: 618px;
+            /*background: rgba(44,44,44,1);*/
+            /*background: #555;*/
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #photoBox>div{
+            width: 19.5%;
+            height: 200px;
+            background: navajowhite;
+        }
+        .pageBtn{
+            width: 15%;
+            height: 30px;
+            /*background: navy;*/
+            margin-left: 42.5%;
+            margin-top: 25px;
+        }
+        .pageBtn>div{
+            width: 45%;
+            height: 30px;
+            background: #333;
+            border-radius: 5px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-size: 12px;
+        }
+        .pageBtn>div:nth-of-type(2){
+            margin-left: 10%;
+        }
+        footer{
+            width: 100%;
+            /*height: 60px;*/
+            /*background: navy;*/
+        }
+        .footerDiv{
+            width: 90%;
+            height: 60px;
+            margin-left: 5%;
+            border-top: 1px solid #777;
         }
     </style>
 </head>
@@ -69,14 +118,35 @@
             </ul>
         </nav>
     </header>
-    <section>
+    <section id="photoBoxContent">
         <article id="photoBoxWarp">
             <p>PHOTO SHOW</p>
             <section id="photoBox">
-
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </section>
         </article>
+        <div class="pageBtn">
+            <div><p>UP PAGE</p></div>
+            <div><P>NEXT PAGE</P></div>
+        </div>
     </section>
+    <footer>
+        <div class="footerDiv"></div>
+    </footer>
 </body>
 <script charset="utf-8">
 
