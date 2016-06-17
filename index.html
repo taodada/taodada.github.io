@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>KEEP MOVING</title>
     <style>
         * {
             margin: 0;
@@ -196,7 +196,7 @@
                     <p>Project</p>
                 </div>
             </div>
-            <div class="point">
+            <div class="point navBoxPhoto">
                 <div class="navBoxViewIcon point"><span class="icon">&#xe608;</span></div>
                 <div class="navBoxViewText point">
                     <p>Photo</p>
@@ -257,8 +257,8 @@
         $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
     });
 
-    $(".navPhoto").click(function(){
-        location.href="./client/photo.html"
+    $(".navPhoto,.navBoxPhoto").click(function(){
+        location.href="./client/photo.html";
     })
 
 
