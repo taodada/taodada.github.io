@@ -32,7 +32,7 @@
 {
 	title: '偏偏喜欢你',
 	artist: '生活',
-	album: '谭咏麟 - 偏偏喜欢你',
+	album: '陈百强 - 偏偏喜欢你',
 	cover: 'images/4.jpg',
 	mp3: 'mp3/ppxihuanni.mp3',
 	ogg: ''
