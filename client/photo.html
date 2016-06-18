@@ -189,7 +189,7 @@
     <header id="header">
         <nav>
             <ul>
-                <li class="point">HOME</li>
+                <li class="point headerNavHome">HOME</li>
                 <li class="point">ABOUT</li>
                 <li class="point">PROJECT</li>
                 <li class="point navPhoto">PHOTO</li>
@@ -344,35 +344,36 @@
 
         function rockFun(obj,who){          //最后一张图片提示效果who为1表示上一张，为0表示下一张
             if(who==0){
-                obj.animate({left:'-6%'},50);
-                obj.animate({left:'6%'},50);
-                obj.animate({left:'-5%'},50);
-                obj.animate({left:'5%'},50);
-                obj.animate({left:'-4%'},50);
-                obj.animate({left:'4%'},50);
-                obj.animate({left:'-3%'},50);
-                obj.animate({left:'3%'},50);
-                obj.animate({left:'-2%'},50);
-                obj.animate({left:'2%'},50);
-                obj.animate({left:'-1%'},50);
-                obj.animate({left:'1%'},50);
-                obj.animate({left:'0%'},50);
+                obj.animate({left:'-10px'},50);
+                obj.animate({left:'9px'},50);
+                obj.animate({left:'-8px'},50);
+                obj.animate({left:'7px'},50);
+                obj.animate({left:'-6px'},50);
+                obj.animate({left:'5px'},50);
+                obj.animate({left:'-4px'},50);
+                obj.animate({left:'3px'},50);
+                obj.animate({left:'-2px'},50);
+                obj.animate({left:'1px'},50);
+                obj.animate({left:'0px'},50);
             }else if(who==1){
-                obj.animate({left:'6%'},50);
-                obj.animate({left:'-6%'},50);
-                obj.animate({left:'5%'},50);
-                obj.animate({left:'-5%'},50);
-                obj.animate({left:'4%'},50);
-                obj.animate({left:'-4%'},50);
-                obj.animate({left:'3%'},50);
-                obj.animate({left:'-3%'},50);
-                obj.animate({left:'2%'},50);
-                obj.animate({left:'-2%'},50);
-                obj.animate({left:'1%'},50);
-                obj.animate({left:'-1%'},50);
-                obj.animate({left:'0%'},50);
+                obj.animate({left:'10px'},50);
+                obj.animate({left:'-9px'},50);
+                obj.animate({left:'8px'},50);
+                obj.animate({left:'-7px'},50);
+                obj.animate({left:'6px'},50);
+                obj.animate({left:'-5px'},50);
+                obj.animate({left:'4px'},50);
+                obj.animate({left:'-3px'},50);
+                obj.animate({left:'2px'},50);
+                obj.animate({left:'-1px'},50);
+                obj.animate({left:'0px'},50);
             }
         }
+
+
+        $(".headerNavHome").click(function(){
+            location.href="../index.html";
+        })
     })
 
 </script>
