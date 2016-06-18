@@ -219,8 +219,8 @@
             </section>
         </article>
         <div class="pageBtn">
-            <div class="point"><p>UP PAGE</p></div>
-            <div class="point"><P>NEXT PAGE</P></div>
+            <div class="point upPage"><p>UP PAGE</p></div>
+            <div class="point nextPage"><P>NEXT PAGE</P></div>
         </div>
         <div id="photoShow">
             <div class="exitBtn point"><p class="icon">&#xe612;</p></div>
@@ -239,14 +239,90 @@
 <script src="./../js/jquery-1.11.3.js"></script>
 <script charset="utf-8">
     $(function(){
-
+        var imgAllNo=46;    //照片总张数
+        var page=0;         //页数
+        var pageAll;        //总页数
+        var pageAllState;   //查看照片数量是不是15得倍数
         /**小BOX插入图片**/
         var photoBoxDiv = $("#photoBox div");
 
-        $.each(photoBoxDiv,function(i,n){
-            $(photoBoxDiv[i]).html("<img src='./../images/" + i + ".jpg'>");
-            $(photoBoxDiv[i]).addClass("" + i + "");
+
+        function insertImg(a,b){
+            for(var i=0;i<b;i++){
+                var m=a+i;
+                console.log("i的值："+i+"a的值："+a+"b2的值"+b);
+                $(photoBoxDiv[i]).html("<img src='./../images/" + m + ".jpg'>");
+                $(photoBoxDiv[i]).attr( "class" ,"point " + m + "");
+
+            }
+            for(var i=b;i<15;i++){
+                $(photoBoxDiv[i]).html("");
+                $(photoBoxDiv[i]).attr( "class" ,"point");
+            }
+        }
+
+        insertImg(0,15);           //页面第一次打开时加载图片
+
+        function checkPage(){       //查看一共有多少页
+            if(imgAllNo%15==0){
+                pageAll=parseInt(imgAllNo/15);
+                pageAllState=0;
+            }else{
+                pageAll=parseInt(imgAllNo/15)+1;
+                pageAllState=1;
+            }
+            console.log(pageAll);
+        }
+
+        function changePange(pg,change){
+            checkPage();
+            var a;
+            if(change==0&&page!=0){
+                page-=1;
+                a=(pg-1)*15;
+                if(page<(pageAll-1)){
+                    var b1=15;
+                    insertImg(a,b1);
+                }else if(page==(pageAll-1)){
+                    var b2=imgAllNo%15;
+                    insertImg(a,b2);
+                }
+            }
+            else if(change==1&&page!=(pageAll-1)){
+                page+=1;
+                a=(pg+1)*15;
+                if(page<(pageAll-1)){
+                    var b1=15;
+                    insertImg(a,b1);
+                }else if(page==(pageAll-1)&&pageAllState==1){
+                    var b2=imgAllNo%15;
+                    console.log("不是整数");
+                    insertImg(a,b2);
+                }else if(page==(pageAll-1)&&pageAllState==0){
+                    var b2=15;
+                    insertImg(a,b2);
+                    console.log("是整数");
+                }
+            }
+            else if(change==0&&page==0){
+                alert("已经是第一页了")
+            }
+            else if(change==1&&page==(pageAll-1)){
+                alert("已经是最后一页了")
+            }
+            console.log("查看a的值"+a);
+        }
+
+        $(".upPage").click(function(){
+            console.log("查看page的值"+page);
+            changePange(page,0)
         });
+
+        $(".nextPage").click(function(){
+            console.log("查看page的值next"+page);
+            changePange(page,1)
+        });
+
 
         /**打开放大页面**/
 
@@ -271,7 +347,8 @@
             var imgNo = $(".photoShowBox").attr("class").split (" ");
             var state = 0;
 
-            if(imgNo[2] != 14 && state == 0){
+            if(imgNo[2] != (imgAllNo-1) && state == 0){
+                console.log("pageaLL-1++++++++++："+(imgAllNo-1)+"imgNo[2]++++++："+imgNo[2])
                 state = 1;
                 var imgNext = parseInt(imgNo[2])+1;
                 console.log("imgNo[2]："+imgNo[2]);
@@ -296,7 +373,7 @@
                     })
                 },150)
 
-            }else if(imgNo[2] == 14){
+            }else if(imgNo[2] == (imgAllNo-1)){
                 var obj=$(".leftShowBox");
                 rockFun(obj,0)
             }
