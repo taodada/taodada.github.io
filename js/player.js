@@ -69,8 +69,8 @@
 			ratio = value / audio.duration * 100;
 
 		$('.timer').html(parseInt(value/60)+':'+currentSec);
-		$('.progress .pace').css('width', ratio + '%');
-		$('.progress .slider a').css('left', ratio + '%');
+		$('.progressC .pace').css('width', ratio + '%');
+		$('.progressC .slider a').css('left', ratio + '%');
 	}
 
 	var updateProgress = function(){
@@ -78,7 +78,7 @@
 	}
 
 	// Progress slider
-	$('.progress .slider').slider({step: 0.1, slide: function(event, ui){
+	$('.progressC .slider').slider({step: 0.1, slide: function(event, ui){
 		$(this).addClass('enable');
 		setProgress(audio.duration * ui.value / 100);
 		clearInterval(timeout);
@@ -161,7 +161,7 @@
 
 	var beforeLoad = function(){
 		var endVal = this.seekable && this.seekable.length ? this.seekable.end(0) : 0;
-		$('.progress .loaded').css('width', (100 / (this.duration || 1) * endVal) +'%');
+		$('.progressC .loaded').css('width', (100 / (this.duration || 1) * endVal) +'%');
 	}
 
 	// Fire when track loaded completely
@@ -179,7 +179,7 @@
 		$('#playlist li').removeClass('playing').eq(i).addClass('playing');
 		audio = newaudio[0];
 		audio.volume = $('.mute').hasClass('enable') ? 0 : volume;
-		audio.addEventListener('progress', beforeLoad, false);
+		audio.addEventListener('progressC', beforeLoad, false);
 		audio.addEventListener('durationchange', beforeLoad, false);
 		audio.addEventListener('canplay', afterLoad, false);
 		audio.addEventListener('ended', ended, false);

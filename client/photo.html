@@ -79,6 +79,12 @@
         }
         #photoBox>div>img{
             height: 200px;
+            -webkit-transform: scale(1);
+            -webkit-transition: all .4s linear;
+        }
+        #photoBox>div:hover img{
+            -webkit-transform: scale(1.2);
+            -webkit-transition: all .4s linear;
         }
         .pageBtn{
             width: 15%;
@@ -129,6 +135,7 @@
             position: absolute;
             left: 0%;
             overflow: hidden;
+            text-align: center;
         }
         .rightShowBox{
             width: 100%;
@@ -154,7 +161,7 @@
             position: relative;
             /*overflow: hidden;*/
         }
-        .photoShowBox>img{
+        .photoShowBox img{
             height: 500px;
         }
         .exitBtn{
@@ -239,7 +246,7 @@
 <script src="./../js/jquery-1.11.3.js"></script>
 <script charset="utf-8">
     $(function(){
-        var imgAllNo=46;    //照片总张数
+        var imgAllNo=50;    //照片总张数
         var page=0;         //页数
         var pageAll;        //总页数
         var pageAllState;   //查看照片数量是不是15得倍数
@@ -250,7 +257,6 @@
         function insertImg(a,b){
             for(var i=0;i<b;i++){
                 var m=a+i;
-                console.log("i的值："+i+"a的值："+a+"b2的值"+b);
                 $(photoBoxDiv[i]).html("<img src='./../images/" + m + ".jpg'>");
                 $(photoBoxDiv[i]).attr( "class" ,"point " + m + "");
 
@@ -296,12 +302,10 @@
                     insertImg(a,b1);
                 }else if(page==(pageAll-1)&&pageAllState==1){
                     var b2=imgAllNo%15;
-                    console.log("不是整数");
                     insertImg(a,b2);
                 }else if(page==(pageAll-1)&&pageAllState==0){
                     var b2=15;
                     insertImg(a,b2);
-                    console.log("是整数");
                 }
             }
             else if(change==0&&page==0){
@@ -310,16 +314,13 @@
             else if(change==1&&page==(pageAll-1)){
                 alert("已经是最后一页了")
             }
-            console.log("查看a的值"+a);
         }
 
         $(".upPage").click(function(){
-            console.log("查看page的值"+page);
             changePange(page,0)
         });
 
         $(".nextPage").click(function(){
-            console.log("查看page的值next"+page);
             changePange(page,1)
         });
 
@@ -328,8 +329,8 @@
 
         $("#photoBox div").click( function (){
             $("#photoShow").css("transform","scale(1)").css("z-index","990").css("opacity","1").css("transition","all .3s linear");
-
-            var className = this.className.split (" ");
+            var className = $(this).attr("class").split (" ");
+//            var className = this.className.split(" ");
             $(".photoShowBox").html("<img src='./../images/" + className[1] + ".jpg'>").attr( "class" ,"photoShowBox leftShowBox " + className[1] + "");
         });
 
@@ -348,11 +349,8 @@
             var state = 0;
 
             if(imgNo[2] != (imgAllNo-1) && state == 0){
-                console.log("pageaLL-1++++++++++："+(imgAllNo-1)+"imgNo[2]++++++："+imgNo[2])
                 state = 1;
                 var imgNext = parseInt(imgNo[2])+1;
-                console.log("imgNo[2]："+imgNo[2]);
-                console.log("imgNext："+imgNext);
                 var newBoxCentent = $("<div class='photoShowBox rightShowBox "+ imgNext +"'><img src='./../images/" + imgNext + ".jpg'></div>");
                 $("#photoShowBoxOut").append(newBoxCentent);    //当前图片移除之前创建好下一个图片
 

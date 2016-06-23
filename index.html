@@ -4,302 +4,324 @@
     <meta charset="UTF-8">
     <title>KEEP MOVING</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'font';
-        }
-        @font-face {
-            font-family: 'font';
-            src: url(./fonts/font/huakang.TTF);
-        }
-        @font-face {
-            font-family: 'icon';
-            src: url(./fonts/icon/iconfont.ttf);
-        }
-        .point:hover{
-            cursor: pointer;
-        }
-        .icon{
-            font-family: 'icon';
-        }
-        #header{
-            width: 100%;
-            height: 718px;
-            background-image: url("images/indexBg.jpg");
-            background-size: 100% 718px;
-            overflow: hidden;
-            /*text-align: center;*/
-        }
-        .headTitle{
-            font-size: 20px;
-            width: 80%;
-            height: 50px;
-            margin-left: 10%;
-            margin-top: 400px;
-            text-align: center;
-            line-height: 50px;
-            color: white;
-        }
-        .headTitle>p:nth-of-type(2){
-            font-size: 12px;
-        }
-        #header>nav>ul>li{
-            width: 8%;
-            height: 80px;
-            float: left;
-            list-style: none;
-            line-height: 80px;
-            text-align: center;
-            font-size: 14px;
-            color: white;
-        }
-        #header>nav>ul>li:nth-of-type(1){
-            margin-left: 30%;
-        }
-        .view{
-            width: 20px;
-            height: 15px;
-            position:fixed;
-            top: 30px;
-            left: 30px;
-            z-index: 999;
-        }
-        .view>div{
-            width: 20px;
-            height: 3px;
-            background: white;
-            position: absolute;
-        }
-        .view>div:nth-of-type(1){
-            top: 0px;
-        }
-        .view>div:nth-of-type(2){
-            top: 6px;
-        }
-        .view>div:nth-of-type(3){
-            top: 12px;
-        }
-        #navBox{
-            width: 100%;
-            height: 800px;
-            position: fixed;
-            top: 0%;
-            left: 0%;
-            z-index: -1;
-            background: rgba(22,22,22,0.8);
-            transform: scale(1.5);
-            opacity: 0;
-        }
-        .navBoxPoint:hover{
-            cursor: url('images/cursor.png'), default;
-        }
-        .navBoxView{
-            width: 50%;
-            height: 480px;
-            margin-left: 25%;
-            margin-top: 100px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navBoxView>div{
-            width: 32%;
-            height: 150px;
-            background: rgba(0,0,0,0.5);
-            outline: 1px solid rgba(55,55,55,0.8);
-            position: relative;
-            overflow: hidden;
-        }
-        .navBoxView>div>div{
-            width: 100%;
-            height: 150px;
-            position: absolute;
-        }
-        .navBoxView>div:hover .navBoxViewIcon{
-             top:-150px;
-             -webkit-transition: all .3s linear;
-         }
-        .navBoxView>div:hover .navBoxViewText{
-            top:0px;
-            -webkit-transition: all .3s linear;
-        }
-        .navBoxViewIcon{
-            text-align: center;
-            line-height: 150px;
-            top:0px;
-            transition: all .2s linear;
-        }
-        .navBoxViewIcon>span{
-            font-size: 45px;
-            color: white;
-        }
-        .navBoxViewText{
-            top:150px;
-            /*background: bisque;*/
-            transition: all .2s linear;
-            text-align: center;
-            line-height: 150px;
-            color: white;
-            font-size: 20px;
-        }
-        #content{
-            width: 100%;
-            height: 500px;
-            background: #121311;
-            position: relative;
-        }
-        footer{
-            width: 100%;
-            height: 100px;
-            background: #080808;
-            text-align: center;
-            line-height: 100px;
-            font-size: 14px;
-            color: white;
-        }
+
     </style>
+    <!--<link rel="stylesheet" href="css/reset.css">-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/fullPage.css">
+    <link rel="stylesheet" href="css/default.css">
+
     <!--<script src="js/jquery-1.7.2.min.js"></script>-->
 </head>
 <body>
-<header id="header">
-    <nav>
-        <ul>
-            <li class="point">HOME</li>
-            <li class="point">ABOUT</li>
-            <li class="point">PROJECT</li>
-            <li class="point navPhoto">PHOTO</li>
-            <li class="point">BLOG</li>
-        </ul>
-    </nav>
-    <div class="headTitle">
-        <p>Without music,life is a journey through a desert</p>
-        <p>In the life long journey with many detours,path,dangerous road,only the strong-willed and never stop the people,will have hopes of reaching the victory away.</p>
+
+<div id="pageContain">
+    <div class="page page1 current">
+        <div class="contain">
+            <header class="pageContent" id="header">
+                <nav>
+                    <ul>
+                        <li class="point">HOME</li>
+                        <li class="point">ABOUT</li>
+                        <li class="point">PROJECT</li>
+                        <li class="point navPhoto">PHOTO</li>
+                        <li class="point">BLOG</li>
+                    </ul>
+                </nav>
+                <!--<div class="guide">-->
+                    <!--<div class="s-xguide-down trans"  onclick="return false;"></div>-->
+                    <!--<div class="s-xguide-down arrow-1 trans"  onclick="return false;"></div>-->
+                <!--</div>-->
+            </header>
+        </div>
     </div>
-    <div class="view point">
-        <div></div>
-        <div></div>
-        <div></div>
+
+    <div class="page page2">
+        <div class="contain">
+            <section id="page1" class="pageContent">
+                <div id="infoShow">
+                    <div class="infoImg"><img src="images/info.png"></div>
+                </div>
+                <div id="contentAboutMe">
+                    <!--<ul class="aboutLeft">-->
+                        <!--<li>-->
+                            <!--<h3>个人简介</h3>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p>1991年中国制造，大于150cm，净重小于100kg。采用人工智能，各部分零件齐全，运转稳定，经二十多年的运行，属质量信得过产品。该“产品”手续齐全，目前奋斗在前端工程师的道路上，在校拥有一年的编程经验，喜欢写语义化良好的HTML/H5页面，能用CSS3和JavaScript实现基本交互效果，在前端编码总是让我乐此不疲</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div>
+                <!--<div class="guide">-->
+                    <!--<div class="s-xguide-down trans"  onclick="return false;"></div>-->
+                    <!--<div class="s-xguide-down arrow-1 trans"  onclick="return false;"></div>-->
+                <!--</div>-->
+            </section>
+        </div>
     </div>
-    <div id="navBox" class="navBoxPoint">
-        <div class="navBoxView">
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe601;</span></div>
-                <div class="navBoxViewText point">
-                    <p>About</p>
+
+    <div class="page page3">
+        <div class="contain">
+            <div id="content">
+                <!--<div class="row">-->
+                <!--<div class="col-md-3">-->
+                <div class="legend">
+                    <h1></h1>
+
+                    <div class="skills">
+                        <ul>
+                            <li><span class="label label-success">Html/JavaScript/jQuery/css</span></li>
+                            <li><span class="label label-info">MySql/MsSql</span></li>
+                            <li><span class="label label-primary">Adobe/Office</span></li>
+                            <li><span class="label label-danger">Php</span></li>
+                            <li><span class="label label-default">C#</span></li>
+                            <li><span class="label label-warning">自学能力</span></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div id="diagram"></div>
+
             </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe603;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Project</p>
+            <div class="get">
+
+                <div class="arc">
+                    <span class="text">H/Js/jQ/Css</span>
+                    <input type="hidden" class="percent" value="100"/>
+                    <input type="hidden" class="color" value="#00cc66"/>
                 </div>
-            </div>
-            <div class="point navBoxPhoto">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe608;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Photo</p>
+
+                <div class="arc">
+                    <span class="text">自学能力</span>
+                    <input type="hidden" class="percent" value="65"/>
+                    <input type="hidden" class="color" value="#cc9933"/>
                 </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe606;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Travel</p>
+
+                <div class="arc">
+                    <span class="text">Adobe/Office</span>
+                    <input type="hidden" class="percent" value="65"/>
+                    <input type="hidden" class="color" value="#0066cc"/>
                 </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe609;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Music</p>
+
+                <div class="arc">
+                    <span class="text">C#</span>
+                    <input type="hidden" class="percent" value="60"/>
+                    <input type="hidden" class="color" value="#999999"/>
                 </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe607;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Blog</p>
+
+                <div class="arc">
+                    <span class="text">Php</span>
+                    <input type="hidden" class="percent" value="60"/>
+                    <input type="hidden" class="color" value="#993333"/>
                 </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe602;</span></div>
-                <div class="navBoxViewText point">
-                    <p>Weibo</p>
+
+                <div class="arc">
+                    <span class="text">MySql/MsSql</span>
+                    <input type="hidden" class="percent" value="60"/>
+                    <input type="hidden" class="color" value="#00ccff"/>
                 </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe600;</span></div>
-                <div class="navBoxViewText point">
-                    <p>WeChat</p>
-                </div>
-            </div>
-            <div class="point">
-                <div class="navBoxViewIcon point"><span class="icon">&#xe604;</span></div>
-                <div class="navBoxViewText point">
-                    <p>QQ</p>
-                </div>
+
             </div>
         </div>
     </div>
-</header>
-<section id="content">
-    <div id="playerBox">
-        <div id="player">
-            <div class="cover"></div>
-            <div class="ctrl">
-                <div class="tag">
-                    <strong>Title</strong>
-                    <span class="artist">Artist</span>
-                    <span class="album">Album</span>
+
+    <div class="page page4">
+        <div class="contain">
+            <p class="txt">第四屏</p>
+        </div>
+    </div>
+
+    <div class="page page5">
+        <div class="contain">
+            <p class="txt">第五屏</p>
+        </div>
+    </div>
+    <div class="page page6">
+        <div class="contain">
+            <footer id="footer">
+                <span>This page was generated by GitHub Pages using the Cayman theme by Jason Long.</span>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- 右侧nav -->
+<div  id="navBarDiv">
+    <ul id="navBar">
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+    </ul>
+</div>
+
+<!-- 音乐播放器 -->
+<div  id="playerBox">
+    <div id="player">
+        <div class="cover"></div>
+        <div class="ctrl">
+            <div class="tag">
+                <strong>Title</strong>
+                <span class="artist">Artist</span>
+                <span class="album">Album</span>
+            </div>
+            <div class="control">
+                <div class="left">
+                    <div class="rewind icon"></div>
+                    <div class="playback icon"></div>
+                    <div class="fastforward icon"></div>
                 </div>
-                <div class="control">
-                    <div class="left">
-                        <div class="rewind icon"></div>
-                        <div class="playback icon"></div>
-                        <div class="fastforward icon"></div>
-                    </div>
-                    <div class="volume right">
-                        <div class="mute icon left"></div>
-                        <div class="slider left">
-                            <div class="pace"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="slider">
-                        <div class="loaded"></div>
+                <div class="volume right">
+                    <div class="mute icon left"></div>
+                    <div class="slider left">
                         <div class="pace"></div>
                     </div>
-                    <div class="timer left">0:00</div>
-                    <div class="right">
-                        <div class="repeat icon"></div>
-                        <div class="shuffle icon"></div>
-                    </div>
+                </div>
+            </div>
+            <div class="progressC">
+                <div class="slider">
+                    <div class="loaded"></div>
+                    <div class="pace"></div>
+                </div>
+                <div class="timer left">0:00</div>
+                <div class="right">
+                    <div class="repeat icon"></div>
+                    <div class="shuffle icon"></div>
                 </div>
             </div>
         </div>
-        <ul id="playlist"></ul>
-        <div id="zhedang"></div>
     </div>
-</section>
-<footer id="footer">
-    <span>This page was generated by GitHub Pages using the Cayman theme by Jason Long.</span>
-</footer>
+    <ul id="playlist"></ul>
+    <div id="zhedang"></div>
+</div>
+
+<!-- 右上角菜单 -->
+<div class="view point">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- 菜单展开 -->
+<div id="navBox" class="navBoxPoint">
+    <div class="navBoxView">
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe601;</span></div>
+            <div class="navBoxViewText point">
+                <p>About</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe603;</span></div>
+            <div class="navBoxViewText point">
+                <p>Project</p>
+            </div>
+        </div>
+        <div class="point navBoxPhoto">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe608;</span></div>
+            <div class="navBoxViewText point">
+                <p>Photo</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe606;</span></div>
+            <div class="navBoxViewText point">
+                <p>Travel</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe609;</span></div>
+            <div class="navBoxViewText point">
+                <p>Music</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe607;</span></div>
+            <div class="navBoxViewText point">
+                <p>Blog</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe602;</span></div>
+            <div class="navBoxViewText point">
+                <p>Weibo</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe600;</span></div>
+            <div class="navBoxViewText point">
+                <p>WeChat</p>
+            </div>
+        </div>
+        <div class="point">
+            <div class="navBoxViewIcon point"><span class="icon">&#xe604;</span></div>
+            <div class="navBoxViewText point">
+                <p>QQ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 <script src="./js/jquery-1.11.3.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
 <script src="js/player.js"></script>
+<script src="js/fullPage.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/raphael.js"></script>
 <script charset="utf-8">
+//滚屏设置
+
+    var runPage;
+    runPage = new FullPage({
+        id: 'pageContain',
+        slideTime: 1000,
+        effect: {
+            transform: {
+                translate: 'Y'
+            },
+            opacity: [0, 1]
+        },
+        mode: 'wheel, touch, nav:navBar',
+        easing: 'ease'
+    });
+
+//监听屏幕的变化
+    window.addEventListener("resize", function () {
+        changeLogoPosition();
+    }, false);
+
+    changeLogoPosition();
+
+    function changeLogoPosition(){
+        var windowHeight=$(window).height();
+        var windowWidth=$(window).width();
+        console.log(windowHeight);
+        $("#navBarDiv").css("top",(windowHeight/2)-60+"px");
+        $(".pageContent").css("height",windowHeight+"px");
+        $(".guide").css("left",(windowWidth/2)-25+"px").css("top",windowHeight-50+"px").css("-webkit-transform","scale(1)");
+    }
+
+//打开左侧菜单
     $(".view").click(function(){
         $("#navBox").css("transform","scale(1)").css("z-index","990").css("opacity","1").css("transition","all .3s linear");
     });
 
+//关闭左侧菜单
     $("#navBox").click(function(){
         $("#navBox").css("transform","scale(1.5)").css("z-index","-1").css("opacity","0").css("transition","all .3s linear");
     });
 
+//页面跳转
     $(".navPhoto,.navBoxPhoto").click(function(){
         location.href="./client/photo.html";
-    })
+    });
+
+
 </script>
 </html>
