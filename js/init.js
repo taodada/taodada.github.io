@@ -14,7 +14,7 @@ var o = {
 		r.circle(300, 300, 85).attr({ stroke: 'none', fill: '#193340' });
 		
 		var title = r.text(300, 300, defaultText).attr({
-			font: '20px Arial',
+			font: '16px Arial',				//设置文字大小
 			fill: '#fff'
 		}).toFront();
 		
@@ -38,18 +38,18 @@ var o = {
 				value = t.find('.percent').val(),
 				text = t.find('.text').text();
 			
-			rad += 30;	
-			var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 26 });
+			rad += 24;			//每一个类的间隔
+			var z = r.path().attr({ arc: [value, color, rad], 'stroke-width': 20 });
 			
-			z.mouseover(function(){
-                this.animate({ 'stroke-width': 50, opacity: .75 }, 1000, 'elastic');
+			z.mouseover(function(){				//鼠标移入效果	stroke-width表示宽度
+                this.animate({ 'stroke-width': 40, opacity: .6 }, 1000, 'elastic');
                 if(Raphael.type != 'VML') //solves IE problem
 				this.toFront();
 				title.stop().animate({ opacity: 0 }, speed, '>', function(){
 					this.attr({ text: text + '\n' + value + '%' }).animate({ opacity: 1 }, speed, '<');
 				});
             }).mouseout(function(){
-				this.stop().animate({ 'stroke-width': 26, opacity: 1 }, speed*4, 'elastic');
+				this.stop().animate({ 'stroke-width': 20, opacity: 1 }, speed*4, 'elastic');
 				title.stop().animate({ opacity: 0 }, speed, '>', function(){
 					title.attr({ text: defaultText }).animate({ opacity: 1 }, speed, '<');
 				});	

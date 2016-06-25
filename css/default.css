@@ -1,4 +1,4 @@
-@import url("reset.css");
+/*@import url("reset.css");*/
 
 /* ------ layout
 -----------------------------------------------*/
@@ -7,10 +7,18 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'font';
+}
+@font-face {
+    font-family: 'font';
+    src: url(../fonts/font/huakang.TTF);
+}
 body {
     background: linear-gradient(135deg, #32d1ac 0%, #4a90e2 100%);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'font';
     font-size: 12px;
     color: #333;
     line-height: 18px;
@@ -28,10 +36,9 @@ body {
 .legend {
     float: left;
     width: 200px;
-    margin-top: 110px;
+    margin-top: 100px;
     margin-left: -20px;
 }
-
 #content h1 {
     font-family: 'Cabin Sketch', arial, serif;
     text-shadow: 3px 3px 0 #ddd;

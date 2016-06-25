@@ -76,8 +76,8 @@
     height: 90px;
     overflow: hidden;
     position: fixed;
-    top: 550px;
-    left: 0px;
+    bottom: -15px;
+    left: -35px;
     z-index: 999;
     /*background: #b3b9bf;*/
 }
