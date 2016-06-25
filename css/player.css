@@ -72,7 +72,7 @@
     z-index: 20;
 }
 #playerBox{
-    width: 30%;
+    width: 380px;
     height: 90px;
     overflow: hidden;
     position: fixed;
